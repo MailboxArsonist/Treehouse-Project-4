@@ -18,7 +18,7 @@ document.getElementById('btn__reset').addEventListener('click', () => {
   game.startGame();
 });
 
-//Set up event listener on each button, call 'markButton' to disable that letter
+//Set up event listener on each button, call 'markButton' to disable that letter and handle interaction in game object
 const buttons = document.getElementById('qwerty');
 buttons.addEventListener('click', (event) => {
   if(event.target.className === 'key'){

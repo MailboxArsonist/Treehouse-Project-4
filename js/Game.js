@@ -38,7 +38,7 @@ class Game {
     if(this.missed === 0){
       document.getElementById('overlay').className = 'lose';
       document.getElementById('overlay').style.display = 'block';
-      document.getElementById('game-over-message').textContent = 'YOU LOSE';
+      document.getElementById('result-message').textContent = 'Nooo... YOU LOSE';
       document.getElementById('btn__reset').textContent = 'Play Again?';
     }
   }
@@ -57,7 +57,7 @@ class Game {
     if(this.gameWon === this.currentPhrase.phrase.length){
       document.getElementById('overlay').className = 'win';
       document.getElementById('overlay').style.display = 'block';
-      document.getElementById('game-over-message').textContent = '';
+      document.getElementById('result-message').textContent = 'Woohoo! You Win!';
       document.getElementById('btn__reset').textContent = 'Play Again?';
     } else{
       this.gameWon = 0;
