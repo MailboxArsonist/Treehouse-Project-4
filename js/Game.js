@@ -1,7 +1,16 @@
 class Game {
-  constructor(phrases){
+  constructor(){
     this.missed = 5;
-    this.phrases = phrases;
+    this.phrases = ['donkey kong',
+                     'pac man',
+                     'frogger',
+                     'mario',
+                     'tetris',
+                     'gauntlet',
+                     'zelda',
+                     'pong',
+                     'sonic',
+                     'rayman'];
     this.currentPhrase = null;
     this.gameWon = 0;
   }

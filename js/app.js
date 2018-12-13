@@ -20,7 +20,7 @@ const markButton = (evt) => {
 //Set up event handler on start button, will call 'resetDisplay' and will create a new Game object.
 document.getElementById('btn__reset').addEventListener('click', () => {
   resetDisplay();
-  game = new Game(phrases);
+  game = new Game();
   game.startGame();
 });
 
