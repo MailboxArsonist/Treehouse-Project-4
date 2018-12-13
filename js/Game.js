@@ -19,12 +19,24 @@ class Game {
   * If yes call the checkForWin method and showMatchedLetter
   */
   handleInteraction(letter){
-    if(this.currentPhrase.checkLetter(letter.textContent)){
-      this.currentPhrase.showMatchedLetter(letter.textContent);
-      letter.classList.add('chosen');
+    const keys = document.querySelectorAll('.key');
+    if(this.currentPhrase.checkLetter(letter)){
+      //loop and add class
+      for(let i = 0; i < keys.length; i++){
+        if(letter === keys[i].textContent){
+          keys[i].disabled = true;
+          keys[i].classList.add('chosen');
+        }
+      }
+      this.currentPhrase.showMatchedLetter(letter);
       this.checkForWin();
     } else{
-      letter.classList.add('wrong');
+      for(let i = 0; i < keys.length; i++){
+        if(letter === keys[i].textContent){
+          keys[i].disabled = true;
+          keys[i].classList.add('wrong');
+        }
+      }
       this.removeLife();
     }
   }
