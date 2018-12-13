@@ -3,13 +3,13 @@ class Game {
     this.missed = 5;
     this.phrases = ['donkey kong',
                      'pac man',
-                     'frogger',
-                     'mario',
-                     'tetris',
-                     'gauntlet',
-                     'zelda',
-                     'pong',
-                     'sonic',
+                     'final fantasy',
+                     'mario and luigi',
+                     'i love tetris',
+                     'street fighter',
+                     'the legend of zelda',
+                     'super smash bros',
+                     'sonic the hedgehog',
                      'rayman'];
     this.currentPhrase = null;
     this.gameWon = 0;

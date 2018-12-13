@@ -20,6 +20,7 @@ const markButton = (evt) => {
 //Set up event handler on start button, will call 'resetDisplay' and will create a new Game object.
 document.getElementById('btn__reset').addEventListener('click', () => {
   resetDisplay();
+  keyCodes = [];
   game = new Game();
   game.startGame();
 });
@@ -42,3 +43,8 @@ buttons.addEventListener('click', (event) => {
     keyCodes.push(event.target.textContent);
   }
 });
+
+//Event listener on mousedown to stop players being able to cheat by highlighting the list
+document.addEventListener('mousedown', (event)=>{
+  event.preventDefault();
+})
