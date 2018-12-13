@@ -8,7 +8,7 @@ class Phrase {
 
   /*
   *
-  * Method will add a random phrase to the display.
+  * Method will add a random phrase to the display. Will create an li for each letter and append to ul on page.
   */
   addPhraseToDisplay(){
     //get ul to append to
@@ -30,8 +30,8 @@ class Phrase {
     }
   }
   /*
-  *
-  * Method check the letter to phrase, return true
+  *@param {string}
+  * Method check the letter vs phrase[i], return true/false if includes
   */
   checkLetter(letterToCheck){
     //loop thorough phrase
@@ -39,7 +39,7 @@ class Phrase {
     //check letterToCheck vs this.phrase[i]
     //if no match
     for(let i = 0; i < this.phrase.length; i++){
-      if(letterToCheck.toLowerCase() === this.phrase[i].toLowerCase()){
+      if(letterToCheck === this.phrase[i].toLowerCase()){
         checkForMatch++
       }
     }
@@ -51,13 +51,13 @@ class Phrase {
   }
 
   /*
-  *
-  * Method will show matched letter by adding show class
+  *@param {string}
+  * Method will show matched letter by adding show class and remove hide class
   */
   showMatchedLetter(letter){
     const lis = document.getElementById('phrase').firstElementChild.children;
     for(let i = 0; i < lis.length; i++){
-      if(lis[i].textContent === letter){
+      if(lis[i].textContent.toLowerCase() === letter){
         lis[i].classList.add('show');
         lis[i].classList.remove('hide');
       }

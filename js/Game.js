@@ -7,16 +7,16 @@ class Game {
   }
   /*
   *
-  * Method will randomly retrieve a phrase from the phrases array.
+  * Method will randomly retrieve a phrase from the phrases array and return
   */
   getRandomPhrase(){
     return this.phrases[Math.floor(Math.random() * this.phrases.length)];
   }
   /*
-  *
+  *@param {string}
   * Method will handle interaction on the keyboard, call checkletter in phrase
-  * If not call the removeLife method
-  * If yes call the checkForWin method and showMatchedLetter
+  * If not call the removeLife method, add class of wrong to button and disable
+  * If yes call the checkForWin method and showMatchedLetter.add class of chosen to button and disable
   */
   handleInteraction(letter){
     const keys = document.querySelectorAll('.key');

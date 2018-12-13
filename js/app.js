@@ -27,9 +27,9 @@ document.getElementById('btn__reset').addEventListener('click', () => {
 //set up listener on keydown. Keys inbetween 65&90 are letters, if keyCode array includes the letter then it means has already been pressed/clicked
 window.addEventListener('keydown', (event) => {
   if (event.keyCode >= 65 && event.keyCode <= 90){
-    if(!keyCodes.includes(event.key)){
-      markButton(event.key);
-      keyCodes.push(event.key);
+    if(!keyCodes.includes(event.key.toLowerCase())){
+      markButton(event.key.toLowerCase());
+      keyCodes.push(event.key.toLowerCase());
     }
   }
 });
