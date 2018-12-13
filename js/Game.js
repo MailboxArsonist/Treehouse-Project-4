@@ -5,8 +5,8 @@ class Game {
     this.currentPhrase = null;
     this.gameWon = 0;
   }
+
   /*
-  *
   * Method will randomly retrieve a phrase from the phrases array and return
   */
   getRandomPhrase(){
@@ -40,22 +40,19 @@ class Game {
       this.removeLife();
     }
   }
+
   /*
-  *
   * This method will remove a life and end game if no more lives.
   */
   removeLife(){
     this.missed--;
     document.getElementsByTagName('img')[this.missed].src = 'images/8-bit-lost.png';
     if(this.missed === 0){
-      document.getElementById('overlay').className = 'lose';
-      document.getElementById('overlay').style.display = 'block';
-      document.getElementById('result-message').textContent = 'Nooo... YOU LOSE';
-      document.getElementById('btn__reset').textContent = 'Play Again?';
+      this.gameOver('lose', 'Nooo... YOU LOSE');
     }
   }
+
   /*
-  *
   * Method will Check if all letters are matched --- Check if all letter classes are show
   */
   checkForWin(){
@@ -67,13 +64,20 @@ class Game {
       }
     }
     if(this.gameWon === this.currentPhrase.phrase.length){
-      document.getElementById('overlay').className = 'win';
-      document.getElementById('overlay').style.display = 'block';
-      document.getElementById('result-message').textContent = 'Woohoo! You Win!';
-      document.getElementById('btn__reset').textContent = 'Play Again?';
+      this.gameOver('win', 'Woohoo! You Win!');
     } else{
       this.gameWon = 0;
     }
+  }
+  /*
+  *@param {string, string}
+  * Method will set overlay display, add message to screen and change button text
+  */
+  gameOver(result, message){
+    document.getElementById('overlay').className = result;
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('result-message').textContent = message;
+    document.getElementById('btn__reset').textContent = 'Play Again?';
   }
   /*
   *
@@ -95,8 +99,8 @@ class Game {
     }
 
   }
+
   /*
-  *
   * Method will start the game, call get random display and add phrase to display from Phrase class.
   */
   startGame(){
